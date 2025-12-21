@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <span class="system-name">System Name</span>
+      <span class="system-name">Showcase</span>
     </div>
     <div class="navbar-menu">
       <router-link to="/" class="nav-item">Program</router-link>
