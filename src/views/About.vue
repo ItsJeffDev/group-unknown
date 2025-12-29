@@ -31,12 +31,13 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
   margin-bottom: 2rem;
+  margin: 0px ;
 }
 
 .content {
   font-size: 1.1rem;
   line-height: 1.7;
-  
+  padding-top: 0px ;
   color: white;
 }
 
@@ -50,7 +51,7 @@ h1 {
   gap: rem;
   margin-top: 3rem;
   padding-top: 3rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #2b71ff;
 }
 
 .stat-item {

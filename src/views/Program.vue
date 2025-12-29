@@ -40,7 +40,7 @@
         <div class="profile">
           <img src alt />
         </div>
-        <h3> Kulot </h3> <!-- Add your Name -->
+        <h3> Kulot</h3> <!-- Add your Name -->
         <p> ... </p> <!-- Your description here -->
         
       </div>

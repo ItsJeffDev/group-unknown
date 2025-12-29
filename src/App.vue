@@ -25,10 +25,16 @@ export default {
 <style>
 /* Global Reset */
 body {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgb(63, 148, 218)
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.247), rgb(63, 148, 218));  /* Light gray background for the whole app */
 }
 
 #app {
