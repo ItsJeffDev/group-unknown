@@ -1,22 +1,34 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <span class="system-name">Showcase</span>
+      <span class="system-name">Unknown</span>
     </div>
-    <div class="navbar-menu">
-      <router-link to="/" class="nav-item">Program</router-link>
-      <router-link to="/about" class="nav-item">About</router-link>
+
+    <button
+      class="hamburger"
+      @click="isMenuOpen = !isMenuOpen"
+      :aria-expanded="isMenuOpen.toString()"
+      aria-label="Toggle menu"
+      >
+      <span :class="{ open: isMenuOpen }"></span>
+      <span :class="{ open: isMenuOpen }"></span>
+      <span :class="{ open: isMenuOpen }"></span>
+    </button>
+
+    <div class="navbar-menu" :class="{ open: isMenuOpen }">
+      <router-link to="/" class="nav-item" @click="closeMenu">Program</router-link>
+      <router-link to="/about" class="nav-item" @click="closeMenu">About</router-link>
       
       <div class="dropdown" @mouseenter="isDropdownOpen = true" @mouseleave="isDropdownOpen = false">
-        <button class="nav-item dropdown-toggle">
+        <button class="nav-item dropdown-toggle" @click.stop="toggleDropdown" :aria-expanded="isDropdownOpen.toString()">
           Developers
           <span class="arrow" :class="{ 'rotated': isDropdownOpen }">▼</span>
         </button>
         <transition name="fade">
           <ul v-if="isDropdownOpen" class="dropdown-menu">
-            <li><router-link to="/developers/frontend" class="dropdown-item">Frontend Team</router-link></li>
-            <li><router-link to="/developers/backend" class="dropdown-item">Backend Team</router-link></li>
-            <li><router-link to="/developers/devops" class="dropdown-item">DevOps</router-link></li>
+            <li><router-link to="/developers/frontend" class="dropdown-item" @click="closeMenu">Frontend Team</router-link></li>
+            <li><router-link to="/developers/backend" class="dropdown-item" @click="closeMenu">Backend Team</router-link></li>
+            <li><router-link to="/developers/devops" class="dropdown-item" @click="closeMenu">DevOps</router-link></li>
           </ul>
         </transition>
       </div>
@@ -29,7 +41,17 @@ export default {
   name: 'AppNavbar',
   data() {
     return {
-      isDropdownOpen: false
+      isDropdownOpen: false,
+      isMenuOpen: false
+    }
+  },
+  methods: {
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+      this.isDropdownOpen = false;
     }
   }
 }
@@ -55,7 +77,7 @@ export default {
   font-family: 'Inter', sans-serif; /* Modern font */
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #2563eb, #7c3aed); /* Vibrant gradient text */
+  background: linear-gradient(135deg, #6177a8, #36bd85); /* Vibrant gradient text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
@@ -79,6 +101,7 @@ export default {
   border: none;
   cursor: pointer;
   font-family: inherit;
+  margin: auto;
 }
 
 .nav-item:hover, .nav-item:focus {
@@ -125,14 +148,13 @@ export default {
   position: absolute;
   top: 100%;
   right: 0;
-  background: white;
+  background: linear-gradient(to top, rgb(206, 245, 245), white);
   min-width: 180px;
   border-radius: 12px;
   padding: 0.5rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   list-style: none;
   margin-top: 0.5rem;
-  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .dropdown-item {
@@ -143,7 +165,9 @@ export default {
   border-radius: 8px;
   transition: all 0.2s ease;
   font-size: 0.95rem;
+  text-align: center;
 }
+
 
 .dropdown-item:hover {
   background-color: #eff6ff;
@@ -160,5 +184,78 @@ export default {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+.hamburger {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #374151;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger span.open:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger span.open:nth-child(2) {
+  opacity: 0;
+}
+.hamburger span.open:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: rgba(255,255,255,0.98);
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem 1.25rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 900;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-menu .nav-item {
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 8px;
+    padding: 0.25rem 0;
+    margin-top: 0.4rem;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
 }
 </style>

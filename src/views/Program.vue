@@ -6,25 +6,51 @@
     </div>
     <div class="features">
       <div class="feature-card">
-        <h3>Innovation</h3>
-        <p>Using the latest technologies to solve real-world problems.</p>
+        <div class="profile">
+          <img src alt />
+        </div>
+        <h3>J</h3>
+        <p>...</p>
+        <!-- Your description here -->
       </div>
       <div class="feature-card">
-        <h3>Performance</h3>
-        <p>Optimized for speed and efficiency across all devices.</p>
+        <div class="profile">
+          <img :src="jeff" alt />
+        </div>
+        <h3>Jeff Kolin Miranda</h3>
+        <p>I am a 17-year-old developer from Legazpi City who breathes code. I started with a simple "Hello World" and it turned into an unstoppable passion for Full-Stack Development.</p>
       </div>
       <div class="feature-card">
-        <h3>Scalability</h3>
-        <p>Designed to grow with your needs from day one.</p>
+        <div class="profile">
+          <img src alt />
+        </div>
+        <h3>R</h3>
+        <p>...</p>
+        <!-- Your description here -->
+      </div>
+      <div class="feature-card">
+        <div class="profile">
+          <img src alt />
+        </div>
+        <h3>L</h3>
+        <p>...</p>
+        <!-- Your description here -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import jeff from "@/assets/jeff.jpg";
+
 export default {
-  name: 'ProgramView'
-}
+  name: "ProgramView",
+  data() {
+    return {
+      jeff
+    };
+  }
+};
 </script>
 
 <style scoped>
@@ -44,13 +70,34 @@ export default {
 
 .hero h1 {
   font-size: 3rem;
-  color: #1e3a8a;
+  background: linear-gradient(
+    135deg,
+    #266bff,
+    #36bd85
+  ); /* Vibrant gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.25rem;
   color: #6b7280;
+}
+
+.profile {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: black;
+  margin: auto;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .features {

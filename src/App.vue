@@ -27,7 +27,8 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f9fafb; /* Light gray background for the whole app */
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.247), rgb(63, 148, 218));  /* Light gray background for the whole app */
 }
 
 #app {
