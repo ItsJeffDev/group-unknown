@@ -9,9 +9,9 @@
         <div class="profile">
           <img src alt />
         </div>
-        <h3>J</h3>
-        <p>...</p>
-        <!-- Your description here -->
+        <h3> Jazh </h3> <!-- Add your Name -->
+        <p> ... </p> <!-- Your description here -->
+        
       </div>
       <div class="feature-card">
         <div class="profile">
@@ -24,17 +24,25 @@
         <div class="profile">
           <img src alt />
         </div>
-        <h3>R</h3>
-        <p>...</p>
-        <!-- Your description here -->
+        <h3> Rey </h3> <!-- Add your Name -->
+        <p> ... </p> <!-- Your description here -->
+        
       </div>
       <div class="feature-card">
         <div class="profile">
           <img src alt />
         </div>
-        <h3>L</h3>
-        <p>...</p>
-        <!-- Your description here -->
+        <h3>Lisa</h3> <!-- Add your Name -->
+        <p> ... </p> <!-- Your description here -->
+        
+      </div>
+            <div class="feature-card">
+        <div class="profile">
+          <img src alt />
+        </div>
+        <h3> Kulot </h3> <!-- Add your Name -->
+        <p> ... </p> <!-- Your description here -->
+        
       </div>
     </div>
   </div>
