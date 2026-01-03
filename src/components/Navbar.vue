@@ -26,9 +26,11 @@
         </button>
         <transition name="fade">
           <ul v-if="isDropdownOpen" class="dropdown-menu">
-            <li><router-link to="/developers/frontend" class="dropdown-item" @click="closeMenu">Frontend Team</router-link></li>
-            <li><router-link to="/developers/backend" class="dropdown-item" @click="closeMenu">Backend Team</router-link></li>
-            <li><router-link to="/developers/devops" class="dropdown-item" @click="closeMenu">DevOps</router-link></li>
+            <li><router-link to="/developers/jk" class="dropdown-item" @click="closeMenu"> Jeff Kolin Miranda </router-link></li>
+            <li><router-link to="/developers/rj" class="dropdown-item" @click="closeMenu"> Rey Gabriel Dajab </router-link></li>
+            <li><router-link to="/developers/jm" class="dropdown-item" @click="closeMenu"> Jazhmine Mirasol </router-link></li>
+            <li><router-link to="/developers/lm" class="dropdown-item" @click="closeMenu"> Lisa Tolentino </router-link></li>
+            <li><router-link to="/developers/ci" class="dropdown-item" @click="closeMenu"> Chrish Imperial </router-link></li>
           </ul>
         </transition>
       </div>
