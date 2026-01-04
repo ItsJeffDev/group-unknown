@@ -28,7 +28,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.25),
-    rgb(63, 148, 218)
+    rgb(0, 0, 0)
   );
   background-attachment: fixed;
   background-repeat: no-repeat;
