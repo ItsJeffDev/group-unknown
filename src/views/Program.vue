@@ -7,10 +7,10 @@
     <div class="features">
       <div class="feature-card">
         <div class="profile">
-          <img src alt />
+          <img :src="jazh" alt="Jazhmine" />
         </div>
         <h3> Jazh </h3> <!-- Add your Name -->
-        <p> ... </p> <!-- Your description here -->
+        <p>"FAILURE IS A PART OF SUCCESS"</p> <!-- Your description here -->
         
       </div>
       <div class="feature-card">
@@ -49,12 +49,14 @@
 </template>
 
 <script>
+import jazh from "@/assets/jazh.jpg";
 import jeff from "@/assets/jeff.jpg";
 
 export default {
   name: "ProgramView",
   data() {
     return {
+      jazh,
       jeff
     };
   }

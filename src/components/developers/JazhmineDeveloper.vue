@@ -1,39 +1,36 @@
 <template>
-  <div class="jeff-page">
+  <div class="jazh-page">
     <div class="profile-section">
-      <img class="avatar" :src="jeff" alt="Jeff Kolin Miranda" />
-      <h1>Jeff Kolin Miranda</h1>
-      <p class="pronouns">he/him</p>
+      <img class="avatar" :src="require('@/assets/jazh.jpg')" />
+      <h1>Jazhmine Mirasol</h1>
+      <p class="pronouns">she/her</p>
       <p class="title"> 
-        I am a 17-year-old Grade 12 student from Legazpi City, Albay. My journey with technology began at the age of 13, and since then, I have developed a sincere passion for software, games and web development.
-Over the past few years, I have dedicated my time to learning the foundations of programming—starting from basic logic to exploring a modern tech stack. Currently, I am focused on building my skills in Vue.js, Node.js, and Express, while also maintaining my interest in enterprise languages like C# and Java.
-Even though I have spent a lot of time practicing and building projects, I believe that I am still a student of the craft. I am always looking for ways to improve my coding style, learn new frameworks, and grow as a future Software Engineer. I am a firm believer that hard work and discipline are the keys to success in this industry.
-My goal is to continue learning every day, eventually work in the tech industry internationally, and use my skills to help others and give back to my community.
+ “Failure is a part of success.” Editor-in-Chief of The Messenger, a campus journalist, and the president of G12 Code.
       </p>
     </div>
-  </div>
+  </div>  
 </template>
 
 <script>
-import jeff from "@/assets/jeff.jpg";
+import jazh from "@/assets/jazh.jpg";
 
 export default {
-  name: "JeffDeveloper",
+  name: "JazhDeveloper",
   data() {
     return {
-      jeff,
+      jazh,
     };
   },
 };
 </script>
 
 <style scoped>
-.jeff-page {
+.jazh-page {
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
   font-family: "Inter", sans-serif;
-  background: #fff;
+  background: linear-gradient(to top, #e9acacff, white);
   border-radius: 20px;
   box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
   text-align: center;
@@ -48,7 +45,7 @@ export default {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #36bd85;
+  border: 4px solid #3048b1ff;
   margin-bottom: 1rem;
 }
 
@@ -67,7 +64,7 @@ h1 {
 
 .title {
   font-size: 1.1rem;
-  color: #374151;
+  color: #000000ff;
   margin-bottom: 1.5rem;
   font-weight: 500;
   line-height: 2;
