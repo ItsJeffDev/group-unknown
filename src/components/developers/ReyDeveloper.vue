@@ -1,39 +1,36 @@
 <template>
-  <div class="jeff-page">
+  <div class="rey-page">
     <div class="profile-section">
-      <img class="avatar" :src="jeff" alt="Jeff Kolin Miranda" />
-      <h1>Jeff Kolin Miranda</h1>
+      <img class="avatar" :src="rey" alt="Reyjan Dajab" />
+      <h1>Reyjan Dajab</h1>
       <p class="pronouns">he/him</p>
       <p class="title"> 
-        I am a 17-year-old Grade 12 student from Legazpi City, Albay. My journey with technology began at the age of 13, and since then, I have developed a sincere passion for software, games and web development.
-Over the past few years, I have dedicated my time to learning the foundations of programming—starting from basic logic to exploring a modern tech stack. Currently, I am focused on building my skills in Vue.js, Node.js, and Express, while also maintaining my interest in enterprise languages like C# and Java.
-Even though I have spent a lot of time practicing and building projects, I believe that I am still a student of the craft. I am always looking for ways to improve my coding style, learn new frameworks, and grow as a future Software Engineer. I am a firm believer that hard work and discipline are the keys to success in this industry.
-My goal is to continue learning every day, eventually work in the tech industry internationally, and use my skills to help others and give back to my community.
+       Hi, I’m Janrey Abunda. I am a student who likes to learn new things and improve my skills. I am responsible, helpful, and doing my best to achieve my goals.
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import jeff from "@/assets/jeff.jpg";
+import rey from "@/assets/rey.jpg";
 
 export default {
-  name: "JeffDeveloper",
+  name: "ReyDeveloper",
   data() {
     return {
-      jeff,
+      rey,
     };
   },
 };
 </script>
 
 <style scoped>
-.jeff-page {
+.rey-page {
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
   font-family: "Inter", sans-serif;
-  background: #fff;
+  background: #2b2929;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
   text-align: center;
@@ -48,13 +45,13 @@ export default {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #36bd85;
+  border: 4px solid #ffffff;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #ffffff;
   margin-bottom: 0.25rem;
 }
 
