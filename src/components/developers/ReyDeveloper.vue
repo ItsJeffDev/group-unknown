@@ -2,7 +2,7 @@
   <div class="rey-page">
     <div class="profile-section">
       <img class="avatar" :src="rey" alt="Reyjan Dajab" />
-      <h1>Reyjan Dajab</h1>
+      <h1>Reyjan Gabriel Dajab</h1>
       <p class="pronouns">he/him</p>
       <p class="title"> 
        Hi, I’m Janrey Abunda. I am a student who likes to learn new things and improve my skills. I am responsible, helpful, and doing my best to achieve my goals.
