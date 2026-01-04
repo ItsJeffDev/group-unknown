@@ -1,45 +1,104 @@
 <template>
-  <div class="jeff-page">
-    <div class="profile-section">
-      <img class="avatar" :src="jeff" alt="Jeff Kolin Miranda" />
-      <h1>Jeff Kolin Miranda</h1>
-      <p class="pronouns">he/him</p>
-      <p class="title"> 
-        I am a 17-year-old Grade 12 student from Legazpi City, Albay. My journey with technology began at the age of 13, and since then, I have developed a sincere passion for software, games and web development.
-Over the past few years, I have dedicated my time to learning the foundations of programming—starting from basic logic to exploring a modern tech stack. Currently, I am focused on building my skills in Vue.js, Node.js, and Express, while also maintaining my interest in enterprise languages like C# and Java.
-Even though I have spent a lot of time practicing and building projects, I believe that I am still a student of the craft. I am always looking for ways to improve my coding style, learn new frameworks, and grow as a future Software Engineer. I am a firm believer that hard work and discipline are the keys to success in this industry.
-My goal is to continue learning every day, eventually work in the tech industry internationally, and use my skills to help others and give back to my community.
-      </p>
+  <div class="profile-page">
+    <!-- Hero / Avatar -->
+    <div class="hero-section">
+      <img :src="avatar" alt="Rey" class="avatar" />
+      <h1>{{ name }}</h1>
+      <p class="pronouns">{{ pronouns }}</p>
+      <p class="bio">{{ bio }}</p>
     </div>
+
+    <!-- Gallery / Life Images -->
+    <div class="gallery-section">
+      <h2>Life in Action</h2>
+      <div class="gallery">
+        <div v-for="img in photos" :key="img.alt" class="gallery-item">
+          <img :src="img.src" :alt="img.alt" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="skills-section">
+      <h2>My Tech Stack</h2>
+      <div class="icons">
+        <img v-for="skill in skills" :key="skill.name" :src="skill.src" :alt="skill.name" />
+      </div>
+    </div>
+
+    <!-- Floating animated circles -->
+    <div class="floating-circle" v-for="n in 15" :key="n" :style="randomCircleStyle()"></div>
   </div>
 </template>
 
 <script>
-import jeff from "@/assets/jeff.jpg";
-
 export default {
-  name: "JeffDeveloper",
+  name: "JeffKolinMiranda",
   data() {
     return {
-      jeff,
+      name: "Jeff Kolin Miranda",
+      pronouns: "he/him",
+      bio: "Coding is my Life! I'm passionate about creating innovative solutions and bringing ideas to life through technology. When I'm not coding, you can find me exploring new tech trends or gaming with friends.",
+      avatar: require("@/assets/jeff.jpg"), // Replace with your profile photo
+      photos: [
+        { src: require("@/assets/work_imgs/x.jpg"), alt: "Basketball Moment 1" },
+        { src: require("@/assets/work_imgs/xx.jpg"), alt: "Basketball Moment 2" },
+        { src: require("@/assets/work_imgs/xxx.jpg"), alt: "Basketball Moment 3" },
+        { src: require("@/assets/work_imgs/z.jpg"), alt: "Basketball Moment 3" }
+      ],
+      skills: [
+        { name: "HTML5", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" },
+        { name: "CSS3", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" },
+        { name: "JavaScript", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+        { name: "Vue.js", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" },
+        { name: "Bootstrap 5", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain.svg" },
+        { name: "Node.js", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
+        { name: "Express.js", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" },
+        { name: "MongoDB", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" },
+        { name: "MySQL", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
+        { name: "C#.NET", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
+        { name: "Python", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+        { name: "Java", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" }
+      ]
     };
   },
+  methods: {
+    randomCircleStyle() {
+      const size = Math.random() * 50 + 20;
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const duration = Math.random() * 25 + 15;
+      const opacity = Math.random() * 0.3 + 0.05;
+      return {
+        width: `${size}px`,
+        height: `${size}px`,
+        top: `${top}%`,
+        left: `${left}%`,
+        opacity,
+        animation: `drift ${duration}s infinite alternate ease-in-out`
+      };
+    }
+  }
 };
 </script>
 
 <style scoped>
-.jeff-page {
-  max-width: 700px;
+.profile-page {
+  position: relative;
+  max-width: 1000px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 3rem;
+  background: linear-gradient(145deg, #000000, #111827);
+  border-radius: 25px;
   font-family: "Inter", sans-serif;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
   text-align: center;
+  color: #f0f0f0;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
-.profile-section {
+/* Hero / Avatar */
+.hero-section {
   margin-bottom: 2rem;
 }
 
@@ -47,101 +106,117 @@ export default {
   width: 180px;
   height: 180px;
   border-radius: 50%;
+  border: 4px solid lime;
   object-fit: cover;
-  border: 4px solid #36bd85;
-  margin-bottom: 1rem;
+  transition: transform 0.6s, box-shadow 0.6s;
 }
 
-h1 {
+.avatar:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 30px lime;
+}
+
+.hero-section h1 {
   font-size: 2.5rem;
-  color: #2563eb;
-  margin-bottom: 0.25rem;
+  color: lime;
+  margin: 0.5rem 0;
 }
 
 .pronouns {
-  font-size: 1rem;
-  color: #6b7280;
-  margin-bottom: 0.75rem;
   font-style: italic;
+  color: lime;
+  margin-bottom: 0.5rem;
 }
 
-.title {
-  font-size: 1.1rem;
-  color: #374151;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  line-height: 2;
+.bio {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #bfdbfe;
 }
 
-.social-buttons {
+/* Gallery Section */
+.gallery-section {
+  margin-bottom: 2rem;
+}
+
+.gallery-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: lime;
+}
+
+.gallery {
   display: flex;
   justify-content: center;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.social-buttons .btn {
-  padding: 0.5rem 1.25rem;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  user-select: none;
-  cursor: pointer;
+.gallery-item {
+  width: 220px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid lime;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 
-.social-buttons .linkedin {
-  background-color: #0a66c2;
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
 }
 
-.social-buttons .linkedin:hover {
-  background-color: #004182;
+.gallery-item:hover img {
+  transform: scale(1.1) rotate(2deg);
+  filter: brightness(1.2);
 }
 
-.social-buttons .facebook {
-  background-color: #1877f2;
+.gallery-item:hover {
+  box-shadow: 0 15px 25px rgba(59,130,246,0.5);
 }
 
-.social-buttons .facebook:hover {
-  background-color: #0f51a1;
-}
-
-.social-buttons .email {
-  background-color: #ef4444;
-}
-
-.social-buttons .email:hover {
-  background-color: #b91c1c;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 2rem 0;
-}
-
-.languages-tools h2 {
-  font-size: 1.5rem;
-  color: #374151;
+/* Skills Section */
+.skills-section h2 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: lime;
 }
 
 .icons {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .icons img {
-  width: 40px;
-  height: 40px;
-  filter: grayscale(0.3);
-  transition: filter 0.3s ease;
+  width: 60px;
+  height: 60px;
+  filter: grayscale(0.2);
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .icons img:hover {
   filter: grayscale(0);
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* Floating Circles */
+.floating-circle {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 50%;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  25% { transform: translateY(-15px) translateX(10px) scale(1.1); }
+  50% { transform: translateY(-10px) translateX(-10px) scale(1.05); }
+  75% { transform: translateY(10px) translateX(5px) scale(1.1); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
 }
 </style>
