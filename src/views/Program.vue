@@ -30,10 +30,10 @@
       </div>
       <div class="feature-card">
         <div class="profile">
-          <img src alt />
+          <img :src="lisa" alt />
         </div>
-        <h3>Lisa</h3> <!-- Add your Name -->
-        <p> ... </p> <!-- Your description here -->
+        <h3>Lisa Tolentino</h3> <!-- Add your Name -->
+        <p> always lonely but not alone </p> <!-- Your description here -->
         
       </div>
             <div class="feature-card">
@@ -52,6 +52,7 @@
 import jazh from "@/assets/jazh.jpg";
 import jeff from "@/assets/jeff.jpg";
 import rey from "@/assets/rey.jpg";
+import lisa from "@/assets/lisa.jpg"
 
 export default {
   name: "ProgramView",
@@ -59,7 +60,8 @@ export default {
     return {
       jazh,
       jeff,
-      rey
+      rey,
+      lisa
     }
   }
 };
