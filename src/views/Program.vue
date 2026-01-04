@@ -22,10 +22,10 @@
       </div>
       <div class="feature-card">
         <div class="profile">
-          <img src alt />
+          <img :src="rey" alt />
         </div>
-        <h3> Rey </h3> <!-- Add your Name -->
-        <p> ... </p> <!-- Your description here -->
+        <h3> Reyjan Gabriel Dajab </h3> <!-- Add your Name -->
+        <p> Hi, I’m Janrey Abunda. I am a student who likes to learn new things and improve my skills. I am responsible, helpful, and doing my best to achieve my goals. </p> <!-- Your description here -->
         
       </div>
       <div class="feature-card">
@@ -51,14 +51,16 @@
 <script>
 import jazh from "@/assets/jazh.jpg";
 import jeff from "@/assets/jeff.jpg";
+import rey from "@/assets/rey.jpg";
 
 export default {
   name: "ProgramView",
   data() {
     return {
       jazh,
-      jeff
-    };
+      jeff,
+      rey
+    }
   }
 };
 </script>
