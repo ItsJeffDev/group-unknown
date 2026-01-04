@@ -1,24 +1,24 @@
 <template>
   <div class="chrish-page">
     <div class="profile-section">
-      <!-- <img class="avatar" :src="jeff" alt="Chrish Imperial" /> -->
-      <h1> </h1>
+      <img class="avatar" :src="chrish" alt="Chrish Imperial" />
+      <h1> Angelo Chrish Imperial </h1>
       <p class="pronouns">he/him</p>
       <p class="title">
-
+        Hello I'm Angelo, 17 year's old efas lang!
       </p>
     </div>
   </div>
 </template>
 
 <script>
-// import chrish from "@/assets/chrish.jpg";
+import chrish from "@/assets/kulot.jpg";
 
 export default {
   name: "ChrishDeveloper",
   data() {
     return {
-    //   chrish
+      chrish
     };
   }
 };
@@ -30,7 +30,7 @@ export default {
   margin: 2rem auto;
   padding: 2rem;
   font-family: "Inter", sans-serif;
-  background: #fff;
+  background: #f8f679;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
   text-align: center;
@@ -45,13 +45,13 @@ export default {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #36bd85;
+  border: 4px solid #000000;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #000000;
   margin-bottom: 0.25rem;
 }
 
@@ -64,7 +64,7 @@ h1 {
 
 .title {
   font-size: 1.1rem;
-  color: #374151;
+  color: #000000;
   margin-bottom: 1.5rem;
   font-weight: 500;
   line-height: 2;

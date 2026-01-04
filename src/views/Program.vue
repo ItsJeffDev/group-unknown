@@ -11,22 +11,24 @@
         </div>
         <h3> Jazh </h3> <!-- Add your Name -->
         <p>"FAILURE IS A PART OF SUCCESS"</p> <!-- Your description here -->
-        
+
       </div>
       <div class="feature-card">
         <div class="profile">
           <img :src="jeff" alt />
         </div>
         <h3>Jeff Kolin Miranda</h3>
-        <p>I am a 17-year-old developer from Legazpi City who breathes code. I started with a simple "Hello World" and it turned into an unstoppable passion for Full-Stack Development.</p>
+        <p>I am a 17-year-old developer from Legazpi City who breathes code. I started with a simple "Hello World" and
+          it turned into an unstoppable passion for Full-Stack Development.</p>
       </div>
       <div class="feature-card">
         <div class="profile">
           <img :src="rey" alt />
         </div>
         <h3> Reyjan Gabriel Dajab </h3> <!-- Add your Name -->
-        <p> Hi, I’m Janrey Abunda. I am a student who likes to learn new things and improve my skills. I am responsible, helpful, and doing my best to achieve my goals. </p> <!-- Your description here -->
-        
+        <p> Hi, I’m Janrey Abunda. I am a student who likes to learn new things and improve my skills. I am responsible,
+          helpful, and doing my best to achieve my goals. </p> <!-- Your description here -->
+
       </div>
       <div class="feature-card">
         <div class="profile">
@@ -34,15 +36,15 @@
         </div>
         <h3>Lisa Tolentino</h3> <!-- Add your Name -->
         <p> always lonely but not alone </p> <!-- Your description here -->
-        
+
       </div>
-            <div class="feature-card">
+      <div class="feature-card">
         <div class="profile">
-          <img src alt />
+          <img :src="chrish" alt />
         </div>
-        <h3> Kulot</h3> <!-- Add your Name -->
-        <p> ... </p> <!-- Your description here -->
-        
+        <h3> Angelo Chrish Imperial</h3> <!-- Add your Name -->
+        <p> Hello I'm Angelo, 17 year's old efas lang! </p> <!-- Your description here -->
+
       </div>
     </div>
   </div>
@@ -52,7 +54,8 @@
 import jazh from "@/assets/jazh.jpg";
 import jeff from "@/assets/jeff.jpg";
 import rey from "@/assets/rey.jpg";
-import lisa from "@/assets/lisa.jpg"
+import lisa from "@/assets/lisa.jpg";
+import chrish from "@/assets/kulot.jpg";
 
 export default {
   name: "ProgramView",
@@ -61,7 +64,8 @@ export default {
       jazh,
       jeff,
       rey,
-      lisa
+      lisa,
+      chrish
     }
   }
 };
@@ -84,11 +88,10 @@ export default {
 
 .hero h1 {
   font-size: 3rem;
-  background: linear-gradient(
-    135deg,
-    #266bff,
-    #36bd85
-  ); /* Vibrant gradient text */
+  background: linear-gradient(135deg,
+      #266bff,
+      #36bd85);
+  /* Vibrant gradient text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
